@@ -1,0 +1,28 @@
+body {
+    background: white;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+.div1 {
+    top: 0%;
+    background-color: #c2ddffcc;
+    color: black;
+    height: 15vh;
+    border-radius: 15px;
+    position: relative;
+}
+.div1 h3 {
+    position: inherit;
+    top: 26%;
+    font-size: 2.5em;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.div2 {
+    background-color: #c2ddffcc;
+    color: black;
+    height: 100vh;
+    border-radius: 15px;
+    position: relative;
+}
