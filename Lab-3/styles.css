@@ -1,28 +1,336 @@
 body {
-    background: white;
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
+    background: #f0f5ff;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #2c3e50;
 }
-.div1 {
-    top: 0%;
-    background-color: #c2ddffcc;
-    color: black;
-    height: 15vh;
-    border-radius: 15px;
-    position: relative;
+.top-frame {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    padding: 15px 40px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-.div1 h3 {
-    position: inherit;
-    top: 26%;
-    font-size: 2.5em;
-    color: rgb(0, 0, 0);
+.logo img {
+    height: 50px;
+}
+.college-name {
+    flex: 1;
     text-align: center;
 }
-
-.div2 {
-    background-color: #c2ddffcc;
-    color: black;
-    height: 100vh;
+.college-name h2 {
+    color: white;
+    font-size: 2em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+.nav-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+.nav-links a:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+/* Main content and frames */
+.main-content {
+    display: flex;
+    height: calc(100vh - 90px);
+}
+.left-frame {
+    width: 200px;
+    background: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+    padding: 30px 15px;
+    border-radius: 15px 0 0 15px;
+}
+.left-frame ul {
+    list-style: none;
+    padding: 0;
+}
+.left-frame li {
+    margin-bottom: 15px;
+}
+.left-frame a {
+    display: block;
+    padding: 12px 20px;
+    margin: 8px 0;
+    text-decoration: none;
+    color: #0074d9;
+    font-size: 1.1em;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.left-frame a:hover {
+    background: #e3f2fd;
+    transform: translateX(5px);
+    text-decoration: none;
+}
+.right-frame {
+    flex: 1;
+    background-color: #f8fbff;
+    border-radius: 0 15px 15px 0;
+    padding: 30px;
+    min-height: 300px;
+    overflow-y: auto;
+    max-height: calc(100vh - 90px);
+}
+/* Card grid and product card styles */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    margin-top: 24px;
+}
+.product-card {
+    background: white;
     border-radius: 15px;
-    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    background: #e6e6e6;
+}
+.card-content {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+.card-content h4 {
+    color: #2c3e50;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+.card-content p {
+    margin: 4px 0;
+    font-size: 0.97em;
+}
+.card-content button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 1.1em;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.card-content button:hover {
+    background: #2980b9;
+    transform: scale(1.02);
+}
+/* Login section styles */
+#login-section {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+#login-section form {
+    display: flex;
+    flex-direction: column;
+}
+#login-section input[type="text"],
+#login-section input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: border-color 0.3s ease;
+}
+#login-section input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+#login-section button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.2em;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#login-section button[type="submit"]:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+/* CSS-only navigation */
+.section:not(:target) {
+    display: none;
+}
+
+.section:target {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Department catalog sections */
+#cse-catalogue:target ~ #catalogue-section .card-grid,
+#ece-catalogue:target ~ #catalogue-section .card-grid,
+#eee-catalogue:target ~ #catalogue-section .card-grid,
+#mech-catalogue:target ~ #catalogue-section .card-grid {
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Cart styles */
+.cart-section {
+    padding: 20px;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.cart-table th, .cart-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-table th {
+    background: #3498db;
+    color: white;
+}
+
+.cart-table img {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.cart-total {
+    margin-top: 20px;
+    text-align: right;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.cart-buttons {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.cart-buttons button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.clear-cart {
+    background: #e74c3c;
+    color: white;
+}
+
+.checkout {
+    background: #2ecc71;
+    color: white;
+}
+
+/* Cart indicator */
+.cart-indicator {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #3498db;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.cart-indicator:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.cart-count {
+    background: #e74c3c;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+/* Department sections - Add scrolling */
+#cse, #ece, #eee, #mech {
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bdc3c7;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #95a5a6;
 }
